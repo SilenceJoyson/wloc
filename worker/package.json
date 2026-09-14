@@ -1,11 +1,12 @@
 {
   "type": "module",
   "scripts": {
-    "test": "node --test 'test/*.test.mjs'",
+    "test": "node --test test/parse.test.mjs test/static-parse.test.mjs test/wloc-stash-output.test.js",
     "dev": "npx wrangler dev",
     "deploy": "npx wrangler deploy --minify",
     "pages:dev": "npx wrangler pages dev --port 8787 -c wrangler.pages.jsonc",
-    "pages:deploy": "npx wrangler pages deploy -c wrangler.pages.jsonc"
+    "pages:deploy": "npx wrangler pages deploy -c wrangler.pages.jsonc",
+    "build:github-pages": "node build-github-pages.mjs"
   },
   "dependencies": {
     "hono": "^4.10.6"
